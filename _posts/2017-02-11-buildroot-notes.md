@@ -7,10 +7,10 @@ categories: install notes
 ## buildroot notes
 
 - do not run as root  
-```
-blackbox ~ # login user  
-$ mkdir br_ppc64
 
+```sh
+# login user  
+$ mkdir br_ppc64
 $ wget https://buildroot.uclibc.org/downloads/snapshots/buildroot-snapshot.tar.bz2  
 $ tar xf buildroot-snapshot.tar.bz2  
 $ cd buildroot  
@@ -22,21 +22,21 @@ $ cd buildroot
 * Move back, now we have the Makefile to build out-of-tree!  
 `$ cd /home/user/br_ppc64`
 
-### we TARGET a (real or emulated) pp64
+### TARGET a (real or emulated) ppc64
 * Import a cfg  
 `$ make defconfig BR2_DEFCONFIG=/home/user/br_ppc64/defconfig`
 
 * Make changes  
 `make menuconfig`
 
-### build
+### Build
 `$ make`
 * We got kernel and initramfs as compressed cpio!
 
 
 ### Optional
 * Strip kernel  
-```
+```sh
 $ export PATH=${PATH}:$(pwd)/host/usr/bin
 $ powerpc64-linux-strip -s images/vmlinux
 ```
