@@ -1,0 +1,84 @@
+blackbox ps4-pup_unpack # clang unpup4.c -Wall
+blackbox ps4-pup_unpack # ./a.out ../455/PS4UPDATE2.PUP.dec 
+Pup4_Ehdr dump: @0x7f419fd2b000
+    magic      1d3d154f 4b
+    unknown04  12010100 4b
+    unknown08  0004 2b
+    flags      00 1b
+    unknown0B  00 1b
+    headerSize 01b0 2b (432b)
+    hashSize   0330 2b (816b)
+    fileSize   0000000007f9a37e 8b (133800830b)
+    entryCount 0007 2b (7n)
+    hashCount  0022 2b (34n)
+    unknown1C  00000000 4b
+dd if=../455/PS4UPDATE2.PUP.dec of=hash.bin bs=1c skip=432 count=816
+
+Entry 0 @0x7f419fd2b020
+    Flags            f0200000 4b
+    Offset          +00000000000004e0 8b (1248b)
+    CompressedSize   0000000000001000 8b (4096b)
+    UncompressedSize 0000000000001000 8b (4096b)
+[*] Special: 00000000f0000000
+dd if=../455/PS4UPDATE2.PUP.dec of=00.bin bs=1c skip=1248 count=4096
+
+Entry 1 @0x7f419fd2b040
+    Flags            00230007 4b
+    Offset          +00000000000014e0 8b (5344b)
+    CompressedSize   0000000000000078 8b (120b)
+    UncompressedSize 0000000000000078 8b (120b)
+dd if=../455/PS4UPDATE2.PUP.dec of=01.bin bs=1c skip=5344 count=120
+
+Entry 2 @0x7f419fd2b060
+    Flags            10106c0e 4b
+    Offset          +0000000000001558 8b (5464b)
+    CompressedSize   0000000000034b90 8b (215952b)
+    UncompressedSize 0000000000095f64 8b (614244b)
+dd if=../455/PS4UPDATE2.PUP.dec of=02.bin bs=1c skip=5464 count=215952
+openssl zlib -d -in 02.bin > 02.bin_deflated
+
+Entry 3 @0x7f419fd2b080
+    Flags            00410007 4b
+    Offset          +00000000000360e8 8b (221416b)
+    CompressedSize   0000000000000160 8b (352b)
+    UncompressedSize 0000000000000160 8b (352b)
+dd if=../455/PS4UPDATE2.PUP.dec of=03.bin bs=1c skip=221416 count=352
+
+Entry 4 @0x7f419fd2b0a0
+    Flags            20206c06 4b
+    Offset          +0000000000036248 8b (221768b)
+    CompressedSize   00000000002863f6 8b (2647030b)
+    UncompressedSize 00000000002863f6 8b (2647030b)
+dd if=../455/PS4UPDATE2.PUP.dec of=04.bin bs=1c skip=221768 count=2647030
+
+Entry 5 @0x7f419fd2b0c0
+    Flags            00630007 4b
+    Offset          +00000000002bc63e 8b (2868798b)
+    CompressedSize   0000000000008160 8b (33120b)
+    UncompressedSize 0000000000008160 8b (33120b)
+dd if=../455/PS4UPDATE2.PUP.dec of=05.bin bs=1c skip=2868798 count=33120
+
+Entry 6 @0x7f419fd2b0e0
+    Flags            00c06c0e 4b
+    Offset          +00000000002c479e 8b (2901918b)
+    CompressedSize   0000000007cd5be0 8b (130898912b)
+    UncompressedSize 000000000ced0000 8b (216858624b)
+dd if=../455/PS4UPDATE2.PUP.dec of=06.bin bs=1c skip=2901918 count=130898912
+openssl zlib -d -in 06.bin > 06.bin_deflated
+
+header  @0x7f419fd2b000
+entry   @0x7f419fd2b100 +0x0100 0x7f419fd2b100
+dumping remaining header: 0x00b0 (0176b)
+
+0x7f419fd2b100 [+0x0000]  04550000 000d4bfb 00000000 00000000 
+0x7f419fd2b110 [+0x0010]  00000120 00000001 00000001 00000000 
+0x7f419fd2b120 [+0x0020]  0001ffef 04550000 00000001 01033fe7 
+0x7f419fd2b130 [+0x0030]  00000000 00000000 00000000 00000000 
+0x7f419fd2b140 [+0x0040]  00000000 00000000 00000000 00000000 
+0x7f419fd2b150 [+0x0050]  00000000 00000000 00000000 00000000 
+0x7f419fd2b160 [+0x0060]  00000000 00000000 00000000 00000000 
+0x7f419fd2b170 [+0x0070]  00000000 00000000 00000000 00000000 
+0x7f419fd2b180 [+0x0080]  00000000 00000000 00000000 00000000 
+0x7f419fd2b190 [+0x0090]  00000000 00000000 00000000 00000000 
+0x7f419fd2b1a0 [+0x00a0]  00000000 00000000 00000000 00000000 
+No remaining bytes

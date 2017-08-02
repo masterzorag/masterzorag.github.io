@@ -1,0 +1,295 @@
+Pup4_Ehdr dump: @0x7f5097a81000
+    magic      1d3d154f 4b
+    unknown04  12010100 4b
+    unknown08  0004 2b
+    flags      00 1b
+    unknown0B  00 1b
+    headerSize 0660 2b (1632b)
+    hashSize   0b00 2b (2816b)
+    fileSize   000000000c48423e 8b (206062142b)
+    entryCount 0020 2b (32n)
+    hashCount  0022 2b (34n)
+    unknown1C  00000000 4b
+dd if=PS4UPDATE1.PUP.dec of=hash.bin bs=1c skip=1632 count=2816
+
+Entry 0 @0x7f5097a81020
+    Flags            f0200000 4b
+    Offset          +0000000000001160 8b (4448b)
+    CompressedSize   0000000000001000 8b (4096b)
+    UncompressedSize 0000000000001000 8b (4096b)
+[*] Special: 00000000f0000000
+dd if=PS4UPDATE1.PUP.dec of=00.bin bs=1c skip=4448 count=4096
+
+Entry 1 @0x7f5097a81040
+    Flags            00230007 4b
+    Offset          +0000000000002160 8b (8544b)
+    CompressedSize   0000000000000078 8b (120b)
+    UncompressedSize 0000000000000078 8b (120b)
+dd if=PS4UPDATE1.PUP.dec of=01.bin bs=1c skip=8544 count=120
+
+Entry 2 @0x7f5097a81060
+    Flags            10106c0e 4b
+    Offset          +00000000000021d8 8b (8664b)
+    CompressedSize   0000000000034b90 8b (215952b)
+    UncompressedSize 0000000000095f64 8b (614244b)
+dd if=PS4UPDATE1.PUP.dec of=02.bin bs=1c skip=8664 count=215952
+openssl zlib -d -in 02.bin > 02.bin_deflated
+
+Entry 3 @0x7f5097a81080
+    Flags            00410007 4b
+    Offset          +0000000000036d68 8b (224616b)
+    CompressedSize   0000000000000160 8b (352b)
+    UncompressedSize 0000000000000160 8b (352b)
+dd if=PS4UPDATE1.PUP.dec of=03.bin bs=1c skip=224616 count=352
+
+Entry 4 @0x7f5097a810a0
+    Flags            20206c06 4b
+    Offset          +0000000000036ec8 8b (224968b)
+    CompressedSize   00000000002863f6 8b (2647030b)
+    UncompressedSize 00000000002863f6 8b (2647030b)
+dd if=PS4UPDATE1.PUP.dec of=04.bin bs=1c skip=224968 count=2647030
+
+Entry 5 @0x7f5097a810c0
+    Flags            d070040e 4b
+    Offset          +00000000002bd2be 8b (2871998b)
+    CompressedSize   00000000000010a0 8b (4256b)
+    UncompressedSize 0000000000001600 8b (5632b)
+dd if=PS4UPDATE1.PUP.dec of=05.bin bs=1c skip=2871998 count=4256
+openssl zlib -d -in 05.bin > 05.bin_deflated
+
+Entry 6 @0x7f5097a810e0
+    Flags            00710007 4b
+    Offset          +00000000002be35e 8b (2876254b)
+    CompressedSize   0000000000000420 8b (1056b)
+    UncompressedSize 0000000000000420 8b (1056b)
+dd if=PS4UPDATE1.PUP.dec of=06.bin bs=1c skip=2876254 count=1056
+
+Entry 7 @0x7f5097a81100
+    Flags            d0106806 4b
+    Offset          +00000000002be77e 8b (2877310b)
+    CompressedSize   0000000000832000 8b (8593408b)
+    UncompressedSize 0000000000832000 8b (8593408b)
+dd if=PS4UPDATE1.PUP.dec of=07.bin bs=1c skip=2877310 count=8593408
+
+Entry 8 @0x7f5097a81120
+    Flags            d0200006 4b
+    Offset          +0000000000af077e 8b (11470718b)
+    CompressedSize   0000000000017400 8b (95232b)
+    UncompressedSize 0000000000017400 8b (95232b)
+dd if=PS4UPDATE1.PUP.dec of=08.bin bs=1c skip=11470718 count=95232
+
+Entry 9 @0x7f5097a81140
+    Flags            00e0040e 4b
+    Offset          +0000000000b07b7e 8b (11565950b)
+    CompressedSize   000000000001c4aa 8b (115882b)
+    UncompressedSize 0000000000080000 8b (524288b)
+dd if=PS4UPDATE1.PUP.dec of=09.bin bs=1c skip=11565950 count=115882
+openssl zlib -d -in 09.bin > 09.bin_deflated
+
+Entry 10 @0x7f5097a81160
+    Flags            0210040e 4b
+    Offset          +0000000000b2401e 8b (11681822b)
+    CompressedSize   000000000001c4a2 8b (115874b)
+    UncompressedSize 0000000000080000 8b (524288b)
+dd if=PS4UPDATE1.PUP.dec of=10.bin bs=1c skip=11681822 count=115874
+openssl zlib -d -in 10.bin > 10.bin_deflated
+
+Entry 11 @0x7f5097a81180
+    Flags            0250040e 4b
+    Offset          +0000000000b404be 8b (11797694b)
+    CompressedSize   000000000001c4a2 8b (115874b)
+    UncompressedSize 0000000000080000 8b (524288b)
+dd if=PS4UPDATE1.PUP.dec of=11.bin bs=1c skip=11797694 count=115874
+openssl zlib -d -in 11.bin > 11.bin_deflated
+
+Entry 12 @0x7f5097a811a0
+    Flags            02b0040e 4b
+    Offset          +0000000000b5c95e 8b (11913566b)
+    CompressedSize   000000000001c4a2 8b (115874b)
+    UncompressedSize 0000000000080000 8b (524288b)
+dd if=PS4UPDATE1.PUP.dec of=12.bin bs=1c skip=11913566 count=115874
+openssl zlib -d -in 12.bin > 12.bin_deflated
+
+Entry 13 @0x7f5097a811c0
+    Flags            00d0040e 4b
+    Offset          +0000000000b78dfe 8b (12029438b)
+    CompressedSize   000000000004ba69 8b (309865b)
+    UncompressedSize 0000000000060000 8b (393216b)
+dd if=PS4UPDATE1.PUP.dec of=13.bin bs=1c skip=12029438 count=309865
+openssl zlib -d -in 13.bin > 13.bin_deflated
+
+Entry 14 @0x7f5097a811e0
+    Flags            0200040e 4b
+    Offset          +0000000000bc485e 8b (12339294b)
+    CompressedSize   000000000004cec8 8b (315080b)
+    UncompressedSize 0000000000060000 8b (393216b)
+dd if=PS4UPDATE1.PUP.dec of=14.bin bs=1c skip=12339294 count=315080
+openssl zlib -d -in 14.bin > 14.bin_deflated
+
+Entry 15 @0x7f5097a81200
+    Flags            0240040e 4b
+    Offset          +0000000000c1171e 8b (12654366b)
+    CompressedSize   00000000000500c3 8b (327875b)
+    UncompressedSize 0000000000060000 8b (393216b)
+dd if=PS4UPDATE1.PUP.dec of=15.bin bs=1c skip=12654366 count=327875
+openssl zlib -d -in 15.bin > 15.bin_deflated
+
+Entry 16 @0x7f5097a81220
+    Flags            02a0040e 4b
+    Offset          +0000000000c617de 8b (12982238b)
+    CompressedSize   000000000004cec8 8b (315080b)
+    UncompressedSize 0000000000060000 8b (393216b)
+dd if=PS4UPDATE1.PUP.dec of=16.bin bs=1c skip=12982238 count=315080
+openssl zlib -d -in 16.bin > 16.bin_deflated
+
+Entry 17 @0x7f5097a81240
+    Flags            0030040e 4b
+    Offset          +0000000000cae69e 8b (13297310b)
+    CompressedSize   00000000000562cd 8b (352973b)
+    UncompressedSize 0000000000080000 8b (524288b)
+dd if=PS4UPDATE1.PUP.dec of=17.bin bs=1c skip=13297310 count=352973
+openssl zlib -d -in 17.bin > 17.bin_deflated
+
+Entry 18 @0x7f5097a81260
+    Flags            0220040e 4b
+    Offset          +0000000000d0495e 8b (13650270b)
+    CompressedSize   0000000000069ac1 8b (432833b)
+    UncompressedSize 0000000000080000 8b (524288b)
+dd if=PS4UPDATE1.PUP.dec of=18.bin bs=1c skip=13650270 count=432833
+openssl zlib -d -in 18.bin > 18.bin_deflated
+
+Entry 19 @0x7f5097a81280
+    Flags            00400006 4b
+    Offset          +0000000000d6e41e 8b (14083102b)
+    CompressedSize   000000000003e000 8b (253952b)
+    UncompressedSize 000000000003e000 8b (253952b)
+dd if=PS4UPDATE1.PUP.dec of=19.bin bs=1c skip=14083102 count=253952
+
+Entry 20 @0x7f5097a812a0
+    Flags            02300006 4b
+    Offset          +0000000000dac41e 8b (14337054b)
+    CompressedSize   000000000003e000 8b (253952b)
+    UncompressedSize 000000000003e000 8b (253952b)
+dd if=PS4UPDATE1.PUP.dec of=20.bin bs=1c skip=14337054 count=253952
+
+Entry 21 @0x7f5097a812c0
+    Flags            02600006 4b
+    Offset          +0000000000dea41e 8b (14591006b)
+    CompressedSize   000000000003e000 8b (253952b)
+    UncompressedSize 000000000003e000 8b (253952b)
+dd if=PS4UPDATE1.PUP.dec of=21.bin bs=1c skip=14591006 count=253952
+
+Entry 22 @0x7f5097a812e0
+    Flags            02700006 4b
+    Offset          +0000000000e2841e 8b (14844958b)
+    CompressedSize   000000000003e000 8b (253952b)
+    UncompressedSize 000000000003e000 8b (253952b)
+dd if=PS4UPDATE1.PUP.dec of=22.bin bs=1c skip=14844958 count=253952
+
+Entry 23 @0x7f5097a81300
+    Flags            02d00006 4b
+    Offset          +0000000000e6641e 8b (15098910b)
+    CompressedSize   000000000003e000 8b (253952b)
+    UncompressedSize 000000000003e000 8b (253952b)
+dd if=PS4UPDATE1.PUP.dec of=23.bin bs=1c skip=15098910 count=253952
+
+Entry 24 @0x7f5097a81320
+    Flags            01930007 4b
+    Offset          +0000000000ea441e 8b (15352862b)
+    CompressedSize   00000000000007f8 8b (2040b)
+    UncompressedSize 00000000000007f8 8b (2040b)
+dd if=PS4UPDATE1.PUP.dec of=24.bin bs=1c skip=15352862 count=2040
+
+Entry 25 @0x7f5097a81340
+    Flags            00506c0e 4b
+    Offset          +0000000000ea4c16 8b (15354902b)
+    CompressedSize   0000000000972740 8b (9905984b)
+    UncompressedSize 0000000000cc0000 8b (13369344b)
+dd if=PS4UPDATE1.PUP.dec of=25.bin bs=1c skip=15354902 count=9905984
+openssl zlib -d -in 25.bin > 25.bin_deflated
+
+Entry 26 @0x7f5097a81360
+    Flags            01b30007 4b
+    Offset          +0000000001817356 8b (25260886b)
+    CompressedSize   0000000000009010 8b (36880b)
+    UncompressedSize 0000000000009010 8b (36880b)
+dd if=PS4UPDATE1.PUP.dec of=26.bin bs=1c skip=25260886 count=36880
+
+Entry 27 @0x7f5097a81380
+    Flags            00606c0e 4b
+    Offset          +0000000001820366 8b (25297766b)
+    CompressedSize   000000000a882de0 8b (176696800b)
+    UncompressedSize 000000000e670000 8b (241631232b)
+dd if=PS4UPDATE1.PUP.dec of=27.bin bs=1c skip=25297766 count=176696800
+openssl zlib -d -in 27.bin > 27.bin_deflated
+
+Entry 28 @0x7f5097a813a0
+    Flags            01d30007 4b
+    Offset          +000000000c0a3146 8b (201994566b)
+    CompressedSize   0000000000000348 8b (840b)
+    UncompressedSize 0000000000000348 8b (840b)
+dd if=PS4UPDATE1.PUP.dec of=28.bin bs=1c skip=201994566 count=840
+
+Entry 29 @0x7f5097a813c0
+    Flags            00806c0e 4b
+    Offset          +000000000c0a348e 8b (201995406b)
+    CompressedSize   000000000026d2f0 8b (2544368b)
+    UncompressedSize 000000000053d000 8b (5492736b)
+dd if=PS4UPDATE1.PUP.dec of=29.bin bs=1c skip=201995406 count=2544368
+openssl zlib -d -in 29.bin > 29.bin_deflated
+
+Entry 30 @0x7f5097a813e0
+    Flags            01f10007 4b
+    Offset          +000000000c31077e 8b (204539774b)
+    CompressedSize   00000000000000c0 8b (192b)
+    UncompressedSize 00000000000000c0 8b (192b)
+dd if=PS4UPDATE1.PUP.dec of=30.bin bs=1c skip=204539774 count=192
+
+Entry 31 @0x7f5097a81400
+    Flags            00706c06 4b
+    Offset          +000000000c31083e 8b (204539966b)
+    CompressedSize   0000000000173a00 8b (1522176b)
+    UncompressedSize 0000000000173a00 8b (1522176b)
+dd if=PS4UPDATE1.PUP.dec of=31.bin bs=1c skip=204539966 count=1522176
+
+header	@0x7f5097a81000
+entry	@0x7f5097a81420 +0x0420 0x7f5097a81420
+dumping remaining header: 0x0240 (0576b)
+
+0x7f5097a81420 [+0x0000]  04550000 000d4bfb 00000000 00000000 
+0x7f5097a81430 [+0x0010]  00000100 00000001 00000001 00000000 
+0x7f5097a81440 [+0x0020]  0001ffef 04550000 00000001 01033fe7 
+0x7f5097a81450 [+0x0030]  00000000 00000000 00000000 00000000 
+0x7f5097a81460 [+0x0040]  00000000 00000000 00000000 00000000 
+0x7f5097a81470 [+0x0050]  00000000 00000000 00000000 00000000 
+0x7f5097a81480 [+0x0060]  00000000 00000000 00000000 00000000 
+0x7f5097a81490 [+0x0070]  00000000 00000000 00000000 00000000 
+0x7f5097a814a0 [+0x0080]  00000000 00000000 00000000 00000000 
+0x7f5097a814b0 [+0x0090]  00000000 00000000 00000000 00000000 
+0x7f5097a814c0 [+0x00a0]  00000000 00000000 00000000 00000000 
+0x7f5097a814d0 [+0x00b0]  00000000 00000000 00000000 00000000 
+0x7f5097a814e0 [+0x00c0]  00000000 00000000 00000000 00000000 
+0x7f5097a814f0 [+0x00d0]  00000000 00000000 00000000 00000000 
+0x7f5097a81500 [+0x00e0]  00000000 00000000 00000000 00000000 
+0x7f5097a81510 [+0x00f0]  00000000 00000000 00000000 00000000 
+0x7f5097a81520 [+0x0100]  00000000 00000000 00000000 00000000 
+0x7f5097a81530 [+0x0110]  00000000 00000000 00000000 00000000 
+0x7f5097a81540 [+0x0120]  00000000 00000000 00000000 00000000 
+0x7f5097a81550 [+0x0130]  00000000 00000000 00000000 00000000 
+0x7f5097a81560 [+0x0140]  00000000 00000000 00000000 00000000 
+0x7f5097a81570 [+0x0150]  00000000 00000000 00000000 00000000 
+0x7f5097a81580 [+0x0160]  00000000 00000000 00000000 00000000 
+0x7f5097a81590 [+0x0170]  00000000 00000000 00000000 00000000 
+0x7f5097a815a0 [+0x0180]  00000000 00000000 00000000 00000000 
+0x7f5097a815b0 [+0x0190]  00000000 00000000 00000000 00000000 
+0x7f5097a815c0 [+0x01a0]  00000000 00000000 00000000 00000000 
+0x7f5097a815d0 [+0x01b0]  00000000 00000000 00000000 00000000 
+0x7f5097a815e0 [+0x01c0]  00000000 00000000 00000000 00000000 
+0x7f5097a815f0 [+0x01d0]  00000000 00000000 00000000 00000000 
+0x7f5097a81600 [+0x01e0]  00000000 00000000 00000000 00000000 
+0x7f5097a81610 [+0x01f0]  00000000 00000000 00000000 00000000 
+0x7f5097a81620 [+0x0200]  00000000 00000000 00000000 00000000 
+0x7f5097a81630 [+0x0210]  00000000 00000000 00000000 00000000 
+0x7f5097a81640 [+0x0220]  00000000 00000000 00000000 00000000 
+0x7f5097a81650 [+0x0230]  00000000 00000000 00000000 00000000 
+No remaining bytes
