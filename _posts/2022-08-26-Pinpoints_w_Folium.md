@@ -6,15 +6,17 @@ categories: python3 sample
 ---
 # Pinpoints on a Map with [Folium](https://python-visualization.github.io/folium)
 
-assuming an IP list with geolocatiion info like following:
-```
-sqlite3 $HOME/Downloads/banlist/banlist_v2.db "SELECT ip,latitude,longitude,city FROM blacklist" > list.ips
+* assuming an IP list with geolocation info like the following:
+```sh
+$ sqlite3 SQL_DB_FILE.db "SELECT ip,latitude,longitude,city FROM blacklist" > list.ips
 #['112.85.42.227', '31.299', '120.585', 'Suzhou']
 ...
 ```
 
-build a map adding Folium Markers iterating single line:
-```
+* build a map adding Folium Markers iterating single line:
+
+turn line into data[4] array by splitting at "|", then build folium.Marker and popup from array:
+```python
 import folium
 
 m = folium.Map(location=[46.0117, 10.93542], zoom_start=2.6)
